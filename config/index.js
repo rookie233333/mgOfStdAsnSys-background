@@ -11,15 +11,12 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      firstProxy: {
+      '/swpu': {
         target: 'http://localhost:3000',
-        filter(pathname, req) {
-          //console.info('firstProxy',req)
-          const isApi = pathname.indexOf('/api') == 0;
-          const ret = isApi;
-          return ret;
-        },
         changeOrigin: true,
+        pathRewrite: {
+          '^/swpu': '/swpu'
+        } //这里重写路径运行后就代理到对应地址 
       },
     },
 

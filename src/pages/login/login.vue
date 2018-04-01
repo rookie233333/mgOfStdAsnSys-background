@@ -1,25 +1,42 @@
 <template>
-  <div class="login">
       <div class="login-form-area">
-        <h3>欢迎注册</h3>
+        <h2 class="login-title">学生社团管理系统</h2>
         <div class="form-col">
           <input type="text" name="name" v-model="name" placeholder="用户名">
         </div>
         <div class="form-col">
-           <input type="password" name="password" v-model="password" placeholder="密码" >
+          <input type="password" name="password" v-model="password" placeholder="密码" >
         </div>
-        <button type="button">登录</button>
+        <div class="form-col">
+          <input type="button" value="登  录" @click="login">
+        </div>
       </div>
-  </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'login',
   data () {
     return {
       name: '',
       password: ''
+    }
+  },
+  methods: {
+    login () {
+      // alert('hello')
+      // debugger
+      axios({
+        method: 'get',
+        url: '/swpu',
+        data: {
+          serviceid: 'swpu_user',
+          methodname: 'loginUser',
+          name: this.name,
+          password: this.password
+        }
+      })
     }
   }
 }

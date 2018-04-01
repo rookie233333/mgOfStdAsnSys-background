@@ -1,5 +1,54 @@
-.login{
-    background: url('../../common/images/login_bg.jpg');
+body {
+    background: url('../../common/images/login_bg.jpg') center top;
     overflow-x: hidden;
-    overflow-y: auto
+    overflow-y: auto;
+    .login-form-area {
+        width: 395px;
+        height: 405px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        background: #F8F8F8;
+        border-radius: 5px;
+        padding: 0 30px;
+        .form-col {
+            margin: 15px auto;
+            padding: 0;
+            input {
+                display: inline-block;
+                box-sizing: border-box;
+                width: 100%;
+                line-height: 45px;
+                height: 45px;
+                padding: 6px 20px;
+                background-color: #dcdcdc;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                color: #555;
+                font-size: 14px;
+                font-family: "Microsoft Yahei";
+                &[type="button"]{
+                    align-items: flex-start;
+                    height: 60px;
+                    line-height: 48px;
+                    border-radius: 6px;
+                    background: #0B77CD;
+                    color: #F8F8F8;
+                    cursor: pointer;
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+        .login-title{
+            margin: 50px 0 60px 0; 
+            font-family: "Microsoft Yahei";
+        }
+    }
 }

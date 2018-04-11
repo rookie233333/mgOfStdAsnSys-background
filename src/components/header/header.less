@@ -1,4 +1,112 @@
+ul{
+    float: left;
+    list-style-type: none;
+    li{
+        float: left;
+        margin: 10px 10px 0 10px;
+        padding: 0 20px;
+        border-top-left-radius:5px;
+        border-top-right-radius: 5px; 
+    }
+}
 .header-bar{
+    min-width: 1370px;
     height: 80px;
-    background: red;
+    background: #d64541;
+    .logo-box{
+        height: 100%;
+        font-size: 30px;
+        color: #ffffff;
+        line-height: 80px;
+        text-align: left;
+        padding-left: 50px;
+    }
+    .nav-bar-box{
+        height: 100%;
+        color: #ffffff;
+        .nav-bar{
+            height: 100%;
+            // margin-left: 30px;
+            li{
+                height: 100%;
+                line-height: 100px;
+                cursor: pointer;
+                &:hover{
+                    background-color: #ffffff;
+                    color: #d64541;
+                    span{
+                        &.icon-activity{
+                            background:url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
+                        }
+                        &.icon-work{
+                            background:url('../../common/images/header-icon-2-active.png') no-repeat center 10px;
+                        }
+                        &.icon-mark{
+                            background:url('../../common/images/header-icon-3-active.png') no-repeat center 10px;
+                        }
+                        &.icon-manage{
+                            background:url('../../common/images/header-icon-4-active.png') no-repeat center 10px;
+                        }
+                    }
+                }
+                span{
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    &.icon-activity{
+                        background:url('../../common/images/header-icon-1.png') no-repeat center 10px;
+                    }
+                    &.icon-work{
+                        background:url('../../common/images/header-icon-2.png') no-repeat center 10px;
+                    }
+                    &.icon-mark{
+                        background:url('../../common/images/header-icon-3.png') no-repeat center 10px;
+                    }
+                    &.icon-manage{
+                        background:url('../../common/images/header-icon-4.png') no-repeat center 10px;
+                    }
+                }
+                &.active{
+                    background-color: #ffffff;
+                    color: #d64541;
+                    span{
+                        &.icon-activity{
+                            background:url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
+                        }
+                        &.icon-work{
+                            background:url('../../common/images/header-icon-2-active.png') no-repeat center 10px;
+                        }
+                        &.icon-mark{
+                            background:url('../../common/images/header-icon-3-active.png') no-repeat center 10px;
+                        }
+                        &.icon-manage{
+                            background:url('../../common/images/header-icon-4-active.png') no-repeat center 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .header-rt{
+            float: left;
+            width: 140px;
+            height: 50px;
+            background: #DA5854;
+            box-shadow: 0 0 4px 1px #c54537;
+            border-radius: 25px;
+            line-height: 50px;
+            margin: 15px 0 15px 10px;
+            cursor: pointer;
+            i.icon-personal{
+                display: block;
+                float: left;
+                width: 30px;
+                height: 30px;
+                margin: 10px 0 10px 10px;
+                background:url('../../common/images/header-icon-personal.png') no-repeat center;    
+            }
+            span{
+                margin-left: -30px;
+            }
+        }
+    }
 }

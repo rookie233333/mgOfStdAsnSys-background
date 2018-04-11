@@ -1,11 +1,10 @@
 <template>
-  
+  <v-header></v-header>
 </template>
 
 <script>
 export default {
-  name:'index',
-  
+  name: 'index'
 }
 </script>
 

@@ -1,26 +1,37 @@
 <template>
       <div class="header-bar row">
           <div class="logo-box col-md-4">
-              SWPU学生社团管理系统
+              <router-link to='/swpu/activity'>
+                SWPU学生社团管理系统
+              </router-link>
           </div>
           <div class="nav-bar-box col-md-6 col-md-offset-2">
                 <ul class="nav-bar">
                     <li class="active">
-                        <span class="icon-activity">活动大厅</span>
-                        </li>
+                        <router-link to='/swpu/activity'>
+                            <span class="icon-activity">活动大厅</span>
+                        </router-link>
                     <li>
-                        <span class="icon-work">办事大厅</span>
+                        <router-link to='/swpu/office'>
+                            <span class="icon-work">办事大厅</span>
+                        </router-link>
                     </li>
                     <li>
-                        <span class="icon-mark">打分系统</span>
+                        <router-link to='/swpu/mark'>
+                            <span class="icon-mark">打分系统</span>
+                        </router-link>
                     </li>
                     <li>
-                        <span class="icon-manage">管理中心</span>
+                        <router-link to='/swpu/manage'>                        
+                            <span class="icon-manage">管理中心</span>
+                        </router-link>
                     </li>
                 </ul>
               <div class="header-rt">
-                  <i class="icon-personal"></i>
-                  <span>个人中心</span>
+                    <router-link to='/swpu/personal'>
+                        <i class="icon-personal"></i>
+                        <span>个人中心</span>
+                    </router-link>
               </div>
           </div>
   </div>
@@ -34,6 +45,5 @@ export default {
 </script>
 
 <style lang="less">
-// @import "../common.css";
 @import "header.less";
 </style>

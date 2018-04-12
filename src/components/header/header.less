@@ -1,19 +1,28 @@
-ul{
+a {
+    text-decoration: none;
+    outline: none;
+    &:hover,&:focus{
+        text-decoration: none;
+        color: unset;
+    }
+    color: #ffffff;
+}
+
+ul {
     float: left;
     list-style-type: none;
-    li{
+    li {
         float: left;
         margin: 10px 10px 0 10px;
-        padding: 0 20px;
-        border-top-left-radius:5px;
-        border-top-right-radius: 5px; 
+        // padding: 0 20px;
     }
 }
-.header-bar{
+
+.header-bar {
     min-width: 1370px;
     height: 80px;
     background: #d64541;
-    .logo-box{
+    .logo-box {
         height: 100%;
         font-size: 30px;
         color: #ffffff;
@@ -21,72 +30,75 @@ ul{
         text-align: left;
         padding-left: 50px;
     }
-    .nav-bar-box{
+    .nav-bar-box {
         height: 100%;
         color: #ffffff;
-        .nav-bar{
-            height: 100%;
-            // margin-left: 30px;
-            li{
-                height: 100%;
+        .nav-bar {
+            height: 100%; // margin-left: 30px;
+            a {
+                display: block;
+                height: 70px;
+                width: 96px;
                 line-height: 100px;
                 cursor: pointer;
-                &:hover{
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                &:hover {
                     background-color: #ffffff;
                     color: #d64541;
-                    span{
-                        &.icon-activity{
-                            background:url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
+                    span {
+                        &.icon-activity {
+                            background: url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
                         }
-                        &.icon-work{
-                            background:url('../../common/images/header-icon-2-active.png') no-repeat center 10px;
+                        &.icon-work {
+                            background: url('../../common/images/header-icon-2-active.png') no-repeat center 10px;
                         }
-                        &.icon-mark{
-                            background:url('../../common/images/header-icon-3-active.png') no-repeat center 10px;
+                        &.icon-mark {
+                            background: url('../../common/images/header-icon-3-active.png') no-repeat center 10px;
                         }
-                        &.icon-manage{
-                            background:url('../../common/images/header-icon-4-active.png') no-repeat center 10px;
+                        &.icon-manage {
+                            background: url('../../common/images/header-icon-4-active.png') no-repeat center 10px;
                         }
                     }
                 }
-                span{
+                span {
                     display: block;
                     height: 100%;
                     width: 100%;
-                    &.icon-activity{
-                        background:url('../../common/images/header-icon-1.png') no-repeat center 10px;
+                    &.icon-activity {
+                        background: url('../../common/images/header-icon-1.png') no-repeat center 10px;
                     }
-                    &.icon-work{
-                        background:url('../../common/images/header-icon-2.png') no-repeat center 10px;
+                    &.icon-work {
+                        background: url('../../common/images/header-icon-2.png') no-repeat center 10px;
                     }
-                    &.icon-mark{
-                        background:url('../../common/images/header-icon-3.png') no-repeat center 10px;
+                    &.icon-mark {
+                        background: url('../../common/images/header-icon-3.png') no-repeat center 10px;
                     }
-                    &.icon-manage{
-                        background:url('../../common/images/header-icon-4.png') no-repeat center 10px;
+                    &.icon-manage {
+                        background: url('../../common/images/header-icon-4.png') no-repeat center 10px;
                     }
                 }
-                &.active{
+                &.active {
                     background-color: #ffffff;
                     color: #d64541;
-                    span{
-                        &.icon-activity{
-                            background:url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
+                    span {
+                        &.icon-activity {
+                            background: url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
                         }
-                        &.icon-work{
-                            background:url('../../common/images/header-icon-2-active.png') no-repeat center 10px;
+                        &.icon-work {
+                            background: url('../../common/images/header-icon-2-active.png') no-repeat center 10px;
                         }
-                        &.icon-mark{
-                            background:url('../../common/images/header-icon-3-active.png') no-repeat center 10px;
+                        &.icon-mark {
+                            background: url('../../common/images/header-icon-3-active.png') no-repeat center 10px;
                         }
-                        &.icon-manage{
-                            background:url('../../common/images/header-icon-4-active.png') no-repeat center 10px;
+                        &.icon-manage {
+                            background: url('../../common/images/header-icon-4-active.png') no-repeat center 10px;
                         }
                     }
                 }
             }
         }
-        .header-rt{
+        .header-rt {
             float: left;
             width: 140px;
             height: 50px;
@@ -96,15 +108,15 @@ ul{
             line-height: 50px;
             margin: 15px 0 15px 10px;
             cursor: pointer;
-            i.icon-personal{
+            i.icon-personal {
                 display: block;
                 float: left;
                 width: 30px;
                 height: 30px;
                 margin: 10px 0 10px 10px;
-                background:url('../../common/images/header-icon-personal.png') no-repeat center;    
+                background: url('../../common/images/header-icon-personal.png') no-repeat center;
             }
-            span{
+            span {
                 margin-left: -30px;
             }
         }

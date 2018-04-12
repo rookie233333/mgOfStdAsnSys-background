@@ -12,7 +12,6 @@ export default {
 </script>
 
 <style>
-/* @import './common/css/common.css'; */
 @import './common/css/bootstrap.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -22,5 +21,4 @@ export default {
   color: #2c3e50;
   width: 100%;
 }
-
 </style>

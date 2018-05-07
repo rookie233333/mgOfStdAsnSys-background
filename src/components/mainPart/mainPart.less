@@ -1,0 +1,38 @@
+@import '../../common/css/variable.less';
+.main-box {
+    width: 100%;
+    height: calc(~"100vh - 80px");
+    // border: 1px solid black;
+    .left {
+        float: left;
+        width: 200px;
+        height: 100%; // background: #ccc;
+        background-color: @themeBg;
+        .left-list {
+            .list-item {
+                a {
+                    display: inline-block;
+                    height: 50px;
+                    width: 100%;
+                    line-height: 50px;
+                    font-size: 14px;
+                    color: @themeFont;
+                    &:hover{
+                        background-color: @themeRedHover;
+                        color: @themeWihte;
+                    }
+                    &.router-link-exact-active{
+                        background-color: @themeRed;
+                        color: @themeWihte;
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        float: left;
+        width: calc(~"100% - 200px");
+        height: 100%;
+        // border: 1px solid yellowgreen;
+    }
+}

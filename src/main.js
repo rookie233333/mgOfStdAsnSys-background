@@ -2,12 +2,15 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import components from './components'
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
+Vue.use(ElementUI)
 
 Object.keys(components).forEach((key) => {
   let name = key.replace(/(\w)/, (v) => v.toUpperCase())// 首字母大写

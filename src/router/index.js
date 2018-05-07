@@ -9,31 +9,63 @@ import office from '../components/office'
 import mark from '../components/mark'
 import manage from '../components/management'
 import personal from '../components/personal'
+// import ct from '../components/ct'
+// import mg from '../components/mg'
 Vue.use(Router)
 
 export default new Router({
   routes: [{
-    path: '/swpu',
+    path: '/',
     component: index,
     children: [
       {
-        path: 'activity',
+        path: '/activity',
         component: activity
       },
       {
-        path: 'office',
-        component: office
+        path: '/office',
+        component: office,
+        children: [
+          {
+            path: '/ct',
+            component: office
+          },
+          {
+            path: '/mg',
+            component: office
+          }
+        ]
       },
       {
-        path: 'mark',
-        component: mark
+        path: '/mark',
+        component: mark,
+        children: [
+          {
+            path: '/ct',
+            component: mark
+          },
+          {
+            path: '/mg',
+            component: mark
+          }
+        ]
       },
       {
-        path: 'manage',
-        component: manage
+        path: '/manage',
+        component: manage,
+        children: [
+          {
+            path: '/ct',
+            component: manage
+          },
+          {
+            path: '/mg',
+            component: manage
+          }
+        ]
       },
       {
-        path: 'personal',
+        path: '/personal',
         component: personal
       }
     ]
@@ -42,10 +74,6 @@ export default new Router({
     path: '/login',
     name: 'login',
     component: login
-  },
-  {
-    path: '/',
-    component: index
   }
   ]
 })

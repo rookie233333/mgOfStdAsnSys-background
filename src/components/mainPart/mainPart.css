@@ -1,0 +1,31 @@
+.main-box {
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+.main-box .left {
+  float: left;
+  width: 200px;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+.main-box .left .left-list .list-item a {
+  display: inline-block;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  font-size: 14px;
+  color: #303030;
+}
+.main-box .left .left-list .list-item a:hover {
+  background-color: #FCBAB3;
+  color: #ffffff;
+}
+.main-box .left .left-list .list-item a.router-link-exact-active {
+  background-color: #d33d3c;
+  color: #ffffff;
+}
+.main-box .right {
+  float: left;
+  width: calc(100% - 200px);
+  height: 100%;
+}

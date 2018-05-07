@@ -1,3 +1,4 @@
+@import '../../common/css/variable.less';
 a {
     text-decoration: none;
     outline: none;
@@ -19,16 +20,20 @@ ul {
 }
 
 .header-bar {
-    min-width: 1370px;
+    // min-width: 1370px;
     height: 80px;
-    background: #d64541;
-    .logo-box {
+    // background: @themeGreen
+    background: @themeGreen;
+    &.row{
+        margin: 0;
+    }
+    .logo-box a {
         height: 100%;
-        font-size: 30px;
+        font-size: 16px;
         color: #ffffff;
         line-height: 80px;
         text-align: left;
-        padding-left: 50px;
+        // padding-left: 50px;
     }
     .nav-bar-box {
         height: 100%;
@@ -45,7 +50,7 @@ ul {
                 border-top-right-radius: 5px;
                 &:hover {
                     background-color: #ffffff;
-                    color: #d64541;
+                    color: @themeGreen;
                     span {
                         &.icon-activity {
                             background: url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
@@ -78,9 +83,9 @@ ul {
                         background: url('../../common/images/header-icon-4.png') no-repeat center 10px;
                     }
                 }
-                &.active {
+                &.router-link-active {
                     background-color: #ffffff;
-                    color: #d64541;
+                    color: @themeGreen;
                     span {
                         &.icon-activity {
                             background: url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
@@ -102,7 +107,7 @@ ul {
             float: left;
             width: 140px;
             height: 50px;
-            background: #DA5854;
+            background: @themeGreen;
             box-shadow: 0 0 4px 1px #c54537;
             border-radius: 25px;
             line-height: 50px;

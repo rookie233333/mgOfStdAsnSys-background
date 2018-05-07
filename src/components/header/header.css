@@ -17,17 +17,18 @@ ul li {
   margin: 10px 10px 0 10px;
 }
 .header-bar {
-  min-width: 1370px;
   height: 80px;
-  background: #d64541;
+  background: #48bc8a;
 }
-.header-bar .logo-box {
+.header-bar.row {
+  margin: 0;
+}
+.header-bar .logo-box a {
   height: 100%;
-  font-size: 30px;
+  font-size: 16px;
   color: #ffffff;
   line-height: 80px;
   text-align: left;
-  padding-left: 50px;
 }
 .header-bar .nav-bar-box {
   height: 100%;
@@ -47,7 +48,7 @@ ul li {
 }
 .header-bar .nav-bar-box .nav-bar a:hover {
   background-color: #ffffff;
-  color: #d64541;
+  color: #48bc8a;
 }
 .header-bar .nav-bar-box .nav-bar a:hover span.icon-activity {
   background: url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
@@ -78,27 +79,27 @@ ul li {
 .header-bar .nav-bar-box .nav-bar a span.icon-manage {
   background: url('../../common/images/header-icon-4.png') no-repeat center 10px;
 }
-.header-bar .nav-bar-box .nav-bar a.active {
+.header-bar .nav-bar-box .nav-bar a.router-link-active {
   background-color: #ffffff;
-  color: #d64541;
+  color: #48bc8a;
 }
-.header-bar .nav-bar-box .nav-bar a.active span.icon-activity {
+.header-bar .nav-bar-box .nav-bar a.router-link-active span.icon-activity {
   background: url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
 }
-.header-bar .nav-bar-box .nav-bar a.active span.icon-work {
+.header-bar .nav-bar-box .nav-bar a.router-link-active span.icon-work {
   background: url('../../common/images/header-icon-2-active.png') no-repeat center 10px;
 }
-.header-bar .nav-bar-box .nav-bar a.active span.icon-mark {
+.header-bar .nav-bar-box .nav-bar a.router-link-active span.icon-mark {
   background: url('../../common/images/header-icon-3-active.png') no-repeat center 10px;
 }
-.header-bar .nav-bar-box .nav-bar a.active span.icon-manage {
+.header-bar .nav-bar-box .nav-bar a.router-link-active span.icon-manage {
   background: url('../../common/images/header-icon-4-active.png') no-repeat center 10px;
 }
 .header-bar .nav-bar-box .header-rt {
   float: left;
   width: 140px;
   height: 50px;
-  background: #DA5854;
+  background: #48bc8a;
   box-shadow: 0 0 4px 1px #c54537;
   border-radius: 25px;
   line-height: 50px;

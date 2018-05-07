@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <v-header></v-header>
-    <v-main></v-main>
+    <v-main-part></v-main-part>
   </div>
 </template>
 

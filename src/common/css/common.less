@@ -1,0 +1,60 @@
+@import './variable.less';
+body,
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+input,
+button {
+    margin: 0;
+    padding: 0;
+    font-family: @primaryFont;
+}
+
+/* ie 右侧滚动条 */
+
+html,
+body {
+    -ms-overflow-style: scrollbar; // height: 100%; //mcustomescrollbar need
+}
+
+button,
+input {
+    border: none;
+    outline: none;
+    font-family: @primaryFont; // input全局字体样式，不要再用宋体！
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+i {
+    font-style: normal;
+}
+
+textarea {
+    resize: none;
+    outline: none;
+}
+
+a {
+    font-family: @primaryFont;
+    font-size: @baseFontSize14;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none !important;
+    text-decoration: none!important;
+}

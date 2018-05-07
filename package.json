@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap-vue": "^2.0.0-rc.6",
+    "element-ui": "^2.3.7",
     "eslint-plugin-html": "^4.0.2",
     "http-proxy-middleware": "^0.18.0",
     "vue": "^2.5.2",

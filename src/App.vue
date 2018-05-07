@@ -11,7 +11,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+@import './common/css/common.less';
 @import './common/css/bootstrap.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

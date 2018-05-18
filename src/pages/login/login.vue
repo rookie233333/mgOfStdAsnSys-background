@@ -15,7 +15,6 @@
 
 <script>
 import axios from 'axios'
-// Vue.prototype.$http = axios
 export default {
   name: 'login',
   data () {
@@ -30,9 +29,8 @@ export default {
         alert('请输入用户名密码')
         return
       }
-      axios.get('/swpu', {
+      axios.get('/swpu_user', {
         params: {
-          serviceid: 'swpu_user',
           methodname: 'loginUser',
           name: this.name,
           password: this.password

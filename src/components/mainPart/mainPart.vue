@@ -3,7 +3,7 @@
     <div class="left">
       <ul class="left-list">
         <li v-for="item in menu_items" class="list-item">
-          <router-link :class="{active:currOpt==item.opt}" :to= "{path:currMenu,query:{opt:item.opt}}">
+          <router-link :class="{active:currOpt==item.opt}" :to="{path:currMenu,query:{opt:item.opt}}">
             <span>{{item.name}}</span>
           </router-link>
         </li>
@@ -20,29 +20,41 @@ export default {
   name: 'v-main',
   data () {
     return {
-      currMenu: this.$route.path.split('/')[0],
+      currMenu: this.$route.path,
       currOpt: this.$route.query.opt,
       menu_items: [
         {
-          name: '创建活动',
-          herf: this.$route.path.split('/')[1] + '/ct',
+          name: this.modelHash()[this.$route.path][0],
           opt: 'ct'
         },
         {
-          name: '管理活动',
-          herf: this.$route.path.split('/')[1] + '/mg',
+          name: this.modelHash()[this.$route.path][1],
           opt: 'mg'
         }
       ]
     }
   },
   watch: {
-    '$route' (to, from) {
+    $route (to, from) {
       this.currMenu = to.path
-    },
-    currMenu: function (to, from) {
-      this.menu_items[0].herf = this.currMenu + '/ct'
-      this.menu_items[1].herf = this.currMenu + '/mg'
+      this.menu_items[0].name = this.modelHash()[this.$route.path][0]
+      this.menu_items[1].name = this.modelHash()[this.$route.path][1]
+      if (this.$route.query.opt === undefined) {
+        this.$router.push({
+          path: this.currMenu,
+          query: { opt: this.menu_items[0].opt }
+        })
+      }
+    }
+  },
+  methods: {
+    modelHash () {
+      return {
+        '/activity': ['创建活动', '管理活动'],
+        '/office': ['创建办事流程', '管理办事流程'],
+        '/mark': ['查看部门评分', '查看社团评分'],
+        '/manage': ['管理会员', '管理管理员']
+      }
     }
   }
 }

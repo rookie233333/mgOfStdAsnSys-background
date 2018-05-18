@@ -1,6 +1,11 @@
 <template>
-  <div class="">
-    
+  <div class="activity-box">
+    <div class="create-activity" v-if="getCurrModel() == 'ct'">
+      创建
+    </div>
+    <div class="mg-activity" v-if="getCurrModel() == 'mg'">
+      管理
+    </div>
   </div>
 </el-form>
 </template>
@@ -8,22 +13,16 @@
   export default {
     data () {
       return {
-        form: {
-          name: '',
-          region: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: ''
-        }
+        currModel: this.$parent.$route.query.opt
       }
     },
     methods: {
-      onSubmit () {
-        console.log('submit!')
+      getCurrModel () {
+        return this.$parent.$route.query.opt
       }
     }
   }
 </script>
+<style lang="less">
+@import '../activity/activity.less';
+</style>

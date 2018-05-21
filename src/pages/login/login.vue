@@ -26,7 +26,7 @@ export default {
   methods: {
     login () {
       if (this.name === '' || this.password === '') {
-        alert('请输入用户名密码')
+        this.$message.error('请输入用户名密码')
         return
       }
       axios.get('/swpu_user', {
@@ -35,10 +35,30 @@ export default {
           name: this.name,
           password: this.password
         }
-      }).then(function (response) {
-        console.log(response)
+      }).then(data => {
+        if (data.data.ISSUCCESS) {
+          this.$message({
+            type: 'success',
+            message: data.data.MSG
+          })
+          this.$router.push({
+            path: '/activity?opt=ct'
+            // params: {
+            //   'opt': 'ct'
+            // }
+          })
+        } else {
+          this.$alert(data.data.MSG, '登录失败', {
+            confirmButtonText: '确定',
+            callback: action => {
+              // 清空内容
+              this.name = ''
+              this.password = ''
+            }
+          })
+        }
       }).catch(function (err) {
-        console.log(err)
+        this.$message.error(err.MSG)
       })
     }
   }

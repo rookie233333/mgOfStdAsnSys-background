@@ -17,11 +17,11 @@
   color: #303030;
 }
 .main-box .left .left-list .list-item a:hover {
-  background-color: #FCBAB3;
+  background-color: #056dc0;
   color: #ffffff;
 }
 .main-box .left .left-list .list-item a.router-link-exact-active {
-  background-color: #d33d3c;
+  background-color: #165f97;
   color: #ffffff;
 }
 .main-box .right {

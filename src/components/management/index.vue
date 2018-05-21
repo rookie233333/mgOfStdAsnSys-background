@@ -8,7 +8,7 @@
         </el-table-column>
          <el-table-column prop="department_name" label="所属部门" sortable>
         </el-table-column>
-        <el-table-column prop="sex" label="性别">
+        <el-table-column prop="sex" label="性别" :formatter="formatSex">
         </el-table-column>
         <el-table-column prop="birthday" label="生日" sortable>
         </el-table-column>
@@ -17,7 +17,7 @@
         </el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
-            <el-button @click="viewDetail(scope.row)" type="text" size="small">查看详情</el-button>
+            <el-button @click="deleteUser(scope.row)" type="text">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -67,6 +67,34 @@ export default {
         .catch(err => {
           this.$message.error(err.MSG)
         })
+    },
+    deleteUser (row) {
+      this.$alert('是否确认删除用户', '操作提示', {
+        confirmButtonText: '确定',
+        callback: action => {
+          axios
+            .get('swpu_user', {
+              params: {
+                methodname: 'delete',
+                id: row.id
+              }
+            })
+            .then(data => {
+              this.$message({
+                type: 'success',
+                message: data.data.MSG
+              })
+              // 刷新数据
+              this.queryUserList()
+            })
+            .catch(err => {
+              this.$message.error(err.MSG)
+            })
+        }
+      })
+    },
+    formatSex (row) {
+      return row.sex === 'M' ? '男' : '女'
     }
   },
   created () {

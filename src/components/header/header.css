@@ -18,7 +18,7 @@ ul li {
 }
 .header-bar {
   height: 80px;
-  background: #48bc8a;
+  background: #d33d3c;
 }
 .header-bar.row {
   margin: 0;
@@ -48,7 +48,7 @@ ul li {
 }
 .header-bar .nav-bar-box .nav-bar a:hover {
   background-color: #ffffff;
-  color: #48bc8a;
+  color: #d33d3c;
 }
 .header-bar .nav-bar-box .nav-bar a:hover span.icon-activity {
   background: url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
@@ -81,7 +81,7 @@ ul li {
 }
 .header-bar .nav-bar-box .nav-bar a.router-link-active {
   background-color: #ffffff;
-  color: #48bc8a;
+  color: #d33d3c;
 }
 .header-bar .nav-bar-box .nav-bar a.router-link-active span.icon-activity {
   background: url('../../common/images/header-icon-1-active.png') no-repeat center 10px;
@@ -99,7 +99,7 @@ ul li {
   float: left;
   width: 140px;
   height: 50px;
-  background: #48bc8a;
+  background: #d33d3c;
   box-shadow: 0 0 4px 1px #c54537;
   border-radius: 25px;
   line-height: 50px;

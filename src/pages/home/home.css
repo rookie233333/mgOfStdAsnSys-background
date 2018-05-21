@@ -1,0 +1,30 @@
+.el-header {
+  background: #165f97;
+}
+.el-header .header-center {
+  width: 950px;
+  margin: 0 auto;
+}
+.logo {
+  background: #1F499D;
+}
+.marquee {
+  width: 950px;
+  margin: 0 auto;
+}
+.marquee .el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 200px;
+  margin: 0;
+}
+.el-main {
+  margin: 20px auto;
+  padding: 24px;
+  border-radius: 3px;
+  transition: .2s;
+}
+body {
+  background-color: #eceff1;
+}

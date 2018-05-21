@@ -83,7 +83,7 @@ export default {
                 confirmButtonText: '确定',
                 callback: action => {
                   this.$message({
-                    type: 'info',
+                    type: 'success',
                     message: '创建活动成功'
                   })
                   setTimeout(() => {

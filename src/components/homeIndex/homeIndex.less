@@ -1,0 +1,120 @@
+// * {
+//     box-sizing: border-box;
+// }
+.container {
+    // .item {
+    //     display: -ms-flexbox;
+    //     display: flex;
+    //     position: relative;
+    //     padding: 24px 30px;
+    //     font-family: PingFang SC, -apple-system, Arial, Microsoft YaHei, Microsoft JhengHei, Helvetica Neue, sans-serif;
+    //     box-sizing: border-box;
+    //     cursor: pointer;
+    //     .item-user {
+    //         margin-right: 15px;
+    //         .user {
+    //             height: 30px;
+    //             width: 30px;
+    //             overflow: hidden;
+    //             border-radius: 3px;
+    //             display: block;
+    //         }
+    //     }
+    // }
+    .left{
+        float: left;
+        width: 360px;
+        margin-right: 15px;
+        // height: 500px;
+        // max-height: calc(~"100vh - 200px");
+        .list-card{
+            height: 53px;
+            width: 100%;
+            margin-bottom: 10px;
+            .score{
+                width: 34px;
+                height: 42px;
+                float: left;
+                margin-right: 10px;
+                background-color: #007fff;
+                border-radius: 2px;
+                .score-number{
+                    display: block;
+                    color: #e8f1ff;
+                    font-size: 12px;
+                    line-height: 14px;
+                    font-weight: 700;
+                }
+            }
+            .department{
+               width: 300px;
+               height: 42px;
+               float: left; 
+               text-align: left;
+               .title{
+                   width: 100%;
+                   line-height: 27px;
+                   font-size: 15px;
+                   overflow: hidden;
+                   text-overflow: ellipsis;
+                   white-space: nowrap;
+               }
+               .tips{
+                   font-size: 12px;
+                   color: #c2c5cd;
+                   .class{
+                       margin-right: 20px;
+                   }
+               }
+            }
+        }
+    }
+    .right{
+        float: left;
+        width: calc(~"100% - 380px");
+        // max-height: calc(~"100vh - 200px");
+    }
+    .box-card {
+        float: left;
+        width: 370px;
+        margin: 0 8px 8px 0;
+        text-align: left;
+        .card-header {
+            font-weight: 800;
+            margin-bottom: 8px;
+            a {
+                font-size: 16px;
+            }
+        }
+        .card-content {
+            height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-family: PingFang SC, -apple-system, Arial, Microsoft YaHei, Microsoft JhengHei, Helvetica Neue, sans-serif;
+            font-size: 14px;
+            padding-right: 15px;
+            color: #333;
+            line-height: 20px;
+            margin-bottom: 15px;
+        }
+        .card-footer {
+            color: #666;
+            font-weight: 700;
+            font-size: 12px;
+            .site {
+                // display: inline-block;
+                // width: 150px;
+                margin-right: 20px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .time{
+                overflow: hidden;    
+                text-overflow: ellipsis;
+                white-space: nowrap; 
+            }
+        }
+    }
+}

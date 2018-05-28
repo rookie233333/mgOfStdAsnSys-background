@@ -25,11 +25,11 @@ export default {
       menu_items: [
         {
           name: this.modelHash()[this.$route.path][0],
-          opt: 'ct'
+          opt: 'mg'
         },
         {
           name: this.modelHash()[this.$route.path][1],
-          opt: 'mg'
+          opt: 'ct'
         }
       ]
     }
@@ -50,10 +50,12 @@ export default {
   methods: {
     modelHash () {
       return {
-        '/activity': ['创建活动', '管理活动'],
-        '/office': ['创建办事流程', '管理办事流程'],
-        '/mark': ['查看部门评分', '查看社团评分'],
-        '/manage': ['管理会员', '管理管理员']
+        '/activity': ['管理活动', '创建活动'],
+        '/office': ['管理办事流程', '创建办事流程'],
+        '/mark': ['查看社团评分', '查看部门评分'],
+        '/manage': ['管理会员', '创建管理员'],
+        '/message': ['查看留言'],
+        '/notic': ['查看公告详情', '发布公告']
       }
     }
   }

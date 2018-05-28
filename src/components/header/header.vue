@@ -6,7 +6,13 @@
                 SWPU学生社团管理系统
             </router-link>
           </div>
-          <div class="nav-bar-box col-md-6 col-md-offset-2">
+          <div class="nav-bar-box col-md-8">
+              <div class="header-rt">
+                    <router-link to='/personal'>
+                        <i class="icon-personal"></i>
+                        <span>超级管理员</span>
+                    </router-link>
+              </div>
                 <ul class="nav-bar">
                     <li>
                         <router-link :class="{'active':currModule=='activity'}" to='/activity'>
@@ -19,7 +25,7 @@
                     </li>
                     <li>
                         <router-link :class="{'active':currModule=='mark'}" to='/mark'>
-                            <span class="icon-mark">打分系统</span>
+                            <span class="icon-mark">评分系统</span>
                         </router-link>
                     </li>
                     <li>
@@ -27,13 +33,17 @@
                             <span class="icon-manage">管理中心</span>
                         </router-link>
                     </li>
+                    <li>
+                        <router-link :class="{'active':currModule=='message'}" to='/message'>
+                            <span class="icon-message">留言中心</span>
+                        </router-link>
+                    </li>
+                     <li>
+                        <router-link :class="{'active':currModule=='notic'}" to='/notic'>
+                            <span class="icon-notic">公告</span>
+                        </router-link>
+                    </li>
                 </ul>
-              <div class="header-rt">
-                    <router-link to='/personal'>
-                        <i class="icon-personal"></i>
-                        <span>个人中心</span>
-                    </router-link>
-              </div>
           </div>
   </div>
 </div>

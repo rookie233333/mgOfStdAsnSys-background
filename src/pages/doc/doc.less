@@ -1,13 +1,12 @@
-body{
-    background-color: #fff;
-}
+// body{
+//     background-color: #fff;
+// }
 .el-container{
-    .header{
+    .el-header{
         background-color: #1F499D;
     }
     .el-main{
-        width: 1138px;
-        height: 600px;
+        width: 1200px;
         margin: 20px auto;
         padding: 24px;
         border: 1px solid #ebebeb;
@@ -16,12 +15,17 @@ body{
     }
     .article-title{
         // margin:20px 0 30px 0;
-        padding-bottom: 20px 0 30px 0;
+        padding: 20px 0;
         div.detail{
-            width: 300px;
-            margin: 0 auto;
+            width: 380px;
+            height: 20px;
+            margin: 20px 0 0 390px;
+            font-size: 12px;
             div{
                 float: left;
+                &:first-child{
+                    margin-right: 30px;
+                }
             }
         }
     }
@@ -32,6 +36,22 @@ body{
         margin-top: 30px;
         p{
             margin: 10px 0;
+            text-indent: 2em;
+            color: #333;
+        }
+        .abstract{
+            font-weight: 700;
+        }
+    }
+    .info{
+        padding: 20px 0;
+        margin-left: 50px;
+        font-size: 12px;
+        div{
+            float: left;
+            &:first-child{
+                margin-right: 30px;
+            }
         }
     }
 }

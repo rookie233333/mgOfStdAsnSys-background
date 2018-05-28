@@ -8,7 +8,7 @@
               <span class="score-number">{{d.average_score}}</span>
             </div>
             <div class="department">
-              <div class="title" :title="d.discribe">{{d.discribe}}</div>
+               <router-link :to="{path:'mark',query:{deptid:d.id}}" class="title" :title="d.discribe">{{d.discribe}}</router-link>
               <div class="tips">
                 <i class="el-icon-star-on"></i>
                 <span class="class">{{d.group_id === 1 ? '部门' : '社团'}}</span>
@@ -22,7 +22,7 @@
         <div class="card" v-for="item in cardData">
             <el-card class="box-card" shadow="never" :body-style="{padding:'24px 20px'}">
                 <div class="card-header">
-                    <a href="www.baidu.com">{{item.name}}</a>
+                    <router-link :to="{path:'/docpage',query:{docid:item.id}}" target="_blank">{{item.name}}</router-link>
                 </div>
                 <div class="card-content">
                     {{item.description}}

@@ -42,7 +42,7 @@ export default {
             message: data.data.MSG
           })
           this.$router.push({
-            path: '/activity?opt=ct'
+            path: '/activity?opt=mg'
             // params: {
             //   'opt': 'ct'
             // }

@@ -10,12 +10,15 @@ import office from '../components/office'
 import mark from '../components/mark'
 import manage from '../components/management'
 import personal from '../components/personal'
+import message from '../components/message'
+import notic from '../components/notic'
 import docPage from '../pages/doc/doc.vue'
 
 import homeIndex from '../components/homeIndex'
 import homeDynamic from '../components/homeDynamic'
 import homeWork from '../components/homeWork'
-import homePerson from '../components/homePerson'
+import homeMessage from '../components/homeMessage'
+import homeMark from '../components/homeMark'
 // import ct from '../components/ct'
 // import mg from '../components/mg'
 Vue.use(Router)
@@ -44,6 +47,14 @@ export default new Router({
       {
         path: '/personal',
         component: personal
+      },
+      {
+        path: '/message',
+        component: message
+      },
+      {
+        path: '/notic',
+        component: notic
       }
     ]
   },
@@ -69,8 +80,12 @@ export default new Router({
         component: homeWork
       },
       {
-        path: '/home/person',
-        component: homePerson
+        path: '/home/mark',
+        component: homeMark
+      },
+      {
+        path: '/home/message',
+        componnent: homeMessage
       }
     ]
   },

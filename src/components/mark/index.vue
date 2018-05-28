@@ -23,7 +23,7 @@
     <!-- 查看社团 -->
     <div class="mg-activity">
       <el-table :data="tableData" height="500" fit border style="width: 100%;text-align:left;">
-        <el-table-column type="index" label="序号">
+        <el-table-column type="index" label="排名">
         </el-table-column>
         <el-table-column prop="name" label="部门名称" sortable>
         </el-table-column>

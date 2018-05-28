@@ -1,6 +1,7 @@
 <template>
   <div class="activity-box">
     <div class="create-activity">
+      <el-button style="float:left" @click="viewDetail(scope.row)" type="text" size="small">添加成员</el-button>   
       <el-table :data="tableData" height="500" fit border style="width: 100%;text-align:left;">
         <el-table-column type="index" label="序号">
         </el-table-column>

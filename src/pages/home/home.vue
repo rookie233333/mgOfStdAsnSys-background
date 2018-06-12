@@ -8,9 +8,9 @@
                 <el-menu class="el-menu-demo" :default-active="activeIndex" mode="horizontal" background-color="#165f97" text-color="#fff" active-text-color="#ffd04b" @select="handleSelect">
                     <el-menu-item index="/home/index">首页</el-menu-item>
                     <el-menu-item index="/home/dynamic">最新动态</el-menu-item>
-                    <el-menu-item index="/home/work">业务办理</el-menu-item>
-                    <el-menu-item index="/home/mark?deptid=1">评分系统</el-menu-item>
-                    <el-menu-item index="/home/message">留言中心</el-menu-item>
+                    <!-- <el-menu-item index="/home/work">业务办理</el-menu-item> -->
+                    <el-menu-item index="/home/mark?deptid=1">社团风采</el-menu-item>
+                    <!-- <el-menu-item index="/home/message">留言中心</el-menu-item> -->
                 </el-menu>
             </div>
         </el-header>

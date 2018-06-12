@@ -1,4 +1,7 @@
-body {
+.body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
     background: url('../../common/images/login_bg.jpg') center top;
     overflow-x: hidden;
     overflow-y: auto;
@@ -46,9 +49,13 @@ body {
                     outline: none;
                 }
             }
+            .el-form-item__content{
+                line-height: 12px;
+                text-align: left;
+            }
         }
         .login-title{
-            margin: 50px 0 60px 0; 
+            margin: 50px 0 50px 0; 
             font-family: "Microsoft Yahei";
         }
     }

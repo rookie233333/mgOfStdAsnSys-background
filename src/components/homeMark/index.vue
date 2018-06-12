@@ -22,22 +22,24 @@
         <div class="home-container">
           <h2>{{currTitle}}</h2>
           <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-            <el-form-item label="评分" prop="grade">
+            <el-form-item label="分数" prop="grade">
               <div class="block">
                 <!-- <span class="demonstration">区分颜色</span> -->
-                <el-rate
+                <!-- <el-rate
                   v-model="form.grade"
                   :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
-                </el-rate>
+                </el-rate> -->
+                <span>{{score}}</span>
               </div>
             </el-form-item>
-            <el-form-item label="评价" prop="content">
-              <el-input type="textarea" v-model="form.content" rows="5"></el-input>
+            <el-form-item label="简介" prop="content">
+              <!-- <el-input type="textarea" v-model="form.content" rows="5"></el-input> -->
+              <span>{{content}}</span>
             </el-form-item>
-            <el-form-item style="clear:both">
+            <!-- <el-form-item style="clear:both">
               <el-button type="primary" @click="onSubmit('form')">提交</el-button>
               <el-button>取消</el-button>
-            </el-form-item>
+            </el-form-item> -->
           </el-form>
         </div>
       </div>
@@ -64,7 +66,9 @@ export default {
         ]
       },
       cuerrId: this.$route.query.deptid,
-      currTitle: ''
+      currTitle: '',
+      score: '',
+      content: ''
     }
   },
   methods: {
@@ -113,6 +117,8 @@ export default {
       this.departmentData.forEach(item => {
         if (item.id === this.cuerrId) {
           this.currTitle = item.name
+          this.score = item.average_score
+          this.content = item.discribe
         }
       })
     },

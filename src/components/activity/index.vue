@@ -1,84 +1,92 @@
 <template>
-  <div class="activity-box">
-    <!-- 创建活动 -->
-    <div class="create-activity" v-if="getCurrModel() == 'ct'">
-      <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <div class="left">
-          <el-form-item label="名称" prop="name">
-          <el-input v-model="form.name"></el-input>
-        </el-form-item>
-        <el-form-item label="地址" prop="site">
-          <el-input v-model="form.site"></el-input>
-        </el-form-item>
-        <el-form-item label="时间" required>
-          <el-col :span="11">
-            <el-form-item prop="date1">
-              <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></el-date-picker>
-            </el-form-item>
-          </el-col>
-          <el-col class="line" :span="2">-</el-col>
-          <el-col :span="11">
-            <el-form-item prop="date2">
-              <el-time-picker type="fixed-time" placeholder="选择时间" v-model="form.date2" style="width: 100%;"></el-time-picker>
-            </el-form-item>
-          </el-col>
-        </el-form-item>
-        <el-form-item label="部门" prop="department_id">
-          <el-select v-model="form.department_id" placeholder="请选择" style="width:100%;">
-            <el-option v-for="item in department_items" :key="item.id" :label="item.name" :value="item.id"></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="发布类型" prop="type">
-          <el-radio-group v-model="form.type">
-            <el-radio :label="0">活动</el-radio>
-            <el-radio :label="1">新闻</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item label="摘要" prop="description">
-          <el-input type="textarea" v-model="form.description" rows='3'></el-input>
-        </el-form-item>
-        </div>
-        <div class="right">
-           <el-form-item label="正文" prop="content">
-          <el-input type="textarea" v-model="form.content" rows="19"></el-input>
-        </el-form-item>
-        </div>
-        <el-form-item style="clear:both">
-          <el-button type="primary" @click="onSubmit('form')">立即创建</el-button>
-          <el-button>取消</el-button>
-        </el-form-item>
-      </el-form>
-    </div>
-    <!-- 管理 -->
-    <div class="mg-activity" v-if="getCurrModel() == 'mg'">
-      <el-table :data="tableData" height="500" fit border style="width: 100%;text-align:left;">
-        <el-table-column type="index" label="序号">
-        </el-table-column>
-        <el-table-column prop="name" label=" 名称" sortable>
-        </el-table-column>
-        <el-table-column prop="site" label=" 地址">
-        </el-table-column>
-        <el-table-column prop="time" label=" 时间" sortable>
-        </el-table-column>
-        </el-table-column>
-        <el-table-column prop="department_name" label="举办部门" sortable>
-        </el-table-column>
-        <el-table-column prop="user_name" label="发布人" sortable>
-        </el-table-column>
-        <el-table-column prop="status" label="状态" sortable :formatter="formatStatus" >
-        </el-table-column>
-        <el-table-column prop="type" label="类型" :formatter="formatDescribe">
-        </el-table-column>
-        <el-table-column label="操作" width="150">
-          <template slot-scope="scope">
-            <el-button @click="godocPage(scope.row)" type="text" size="small">查看详情</el-button>
-            <el-button @click="publish(scope.row)" v-if="isPublish(scope.row)" type="text" size="small">发布</el-button>
-            <el-button @click="cancelPub(scope.row)"  v-if="!isPublish(scope.row)" type="text" size="small">取消发布</el-button>            
-          </template>
-        </el-table-column>
-      </el-table>
-    </div>
-  </div>
+  <el-container class="activity-box">
+    <el-aside width="250px" style="background-color: rgb(238, 241, 246)">
+        <el-menu :router = "true" >
+                <el-menu-item index="news?opt=mg"><i class="el-icon-circle-check-outline"></i>管理新闻</el-menu-item>
+                <el-menu-item index="news?opt=ct"><i class="el-icon-edit"></i>创建新闻</el-menu-item>  
+            </el-menu>
+    </el-aside>
+    <el-main>
+      <!-- 创建活动 -->
+      <div class="create-activity" v-if="getCurrModel() == 'ct'">
+        <el-form ref="form" :model="form" :rules="rules" label-width="80px">
+          <div class="left">
+            <el-form-item label="名称" prop="name">
+            <el-input v-model="form.name"></el-input>
+          </el-form-item>
+          <el-form-item label="地址" prop="site">
+            <el-input v-model="form.site"></el-input>
+          </el-form-item>
+          <el-form-item label="时间" required>
+            <el-col :span="11">
+              <el-form-item prop="date1">
+                <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></el-date-picker>
+              </el-form-item>
+            </el-col>
+            <el-col class="line" :span="2">-</el-col>
+            <el-col :span="11">
+              <el-form-item prop="date2">
+                <el-time-picker type="fixed-time" placeholder="选择时间" v-model="form.date2" style="width: 100%;"></el-time-picker>
+              </el-form-item>
+            </el-col>
+          </el-form-item>
+          <el-form-item label="部门" prop="department_id">
+            <el-select v-model="form.department_id" placeholder="请选择" style="width:100%;">
+              <el-option v-for="item in department_items" :key="item.id" :label="item.name" :value="item.id"></el-option>
+            </el-select>
+          </el-form-item>
+          <el-form-item label="发布类型" prop="type">
+            <el-radio-group v-model="form.type">
+              <el-radio :label="0">活动</el-radio>
+              <el-radio :label="1">新闻</el-radio>
+            </el-radio-group>
+          </el-form-item>
+          <el-form-item label="摘要" prop="description">
+            <el-input type="textarea" v-model="form.description" rows='3'></el-input>
+          </el-form-item>
+          </div>
+          <div class="right">
+            <el-form-item label="正文" prop="content">
+            <el-input type="textarea" v-model="form.content" rows="19"></el-input>
+          </el-form-item>
+          </div>
+          <el-form-item style="clear:both">
+            <el-button type="primary" @click="onSubmit('form')">立即创建</el-button>
+            <el-button>取消</el-button>
+          </el-form-item>
+        </el-form>
+      </div>
+      <!-- 管理 -->
+      <div class="mg-activity" v-if="getCurrModel() == 'mg'">
+        <el-table :data="tableData" height="500" fit border style="width: 100%;text-align:left;">
+          <el-table-column type="index" label="序号">
+          </el-table-column>
+          <el-table-column prop="name" label=" 名称" sortable>
+          </el-table-column>
+          <el-table-column prop="site" label=" 地址">
+          </el-table-column>
+          <el-table-column prop="time" label=" 时间" sortable>
+          </el-table-column>
+          <el-table-column prop="department_name" label="部门" sortable>
+          </el-table-column>
+          <el-table-column prop="user_name" label="发布人" sortable>
+          </el-table-column>
+          <el-table-column prop="status" label="状态" sortable :formatter="formatStatus" >
+          </el-table-column>
+          <el-table-column prop="type" label="类型" :formatter="formatDescribe">
+          </el-table-column>
+          <el-table-column label="操作" width="180px">
+            <template slot-scope="scope">
+              <el-button @click="godocPage(scope.row)" type="text" size="small">查看详情</el-button>
+              <el-button @click="publish(scope.row)" v-if="isPublish(scope.row)" type="text" size="small">发布</el-button>
+              <el-button @click="cancelPub(scope.row)"  v-if="!isPublish(scope.row)" type="text" size="small">取消发布</el-button>   
+              <el-button @click="deleteNews(scope.row)" type="text" size="small">删除</el-button>           
+            </template>
+          </el-table-column>
+        </el-table>
+      </div>
+    </el-main>
+  </el-container>
 </template>
 <script>
 import axios from 'axios'
@@ -140,7 +148,8 @@ export default {
       },
       currModel: this.$parent.$route.query.opt,
       department_items: [],
-      tableData: []
+      tableData: [],
+      userInfo: JSON.parse(window.localStorage.getItem('userInfo'))
     }
   },
   methods: {
@@ -223,7 +232,8 @@ export default {
       axios
         .get('/swpu_activity', {
           params: {
-            methodname: 'queryList'
+            methodname: 'query',
+            society_id: this.userInfo.society_id
           }
         })
         .then(data => {
@@ -234,7 +244,7 @@ export default {
         })
     },
     formatStatus (row, column) {
-      return row.status === -1 ? '发布失败' : row.status === 0 ? '未发布' : row.status === 1 ? '已发布' : '取消发布'
+      return row.status === -1 ? '发布失败' : row.status === 0 ? '未发布' : '已发布'
     },
     formatDescribe (row) {
       return row.type === 0 ? '活动' : '新闻'
@@ -246,49 +256,82 @@ export default {
       window.open(routeData.href, '_blank')
     },
     publish (row) {
-      axios
-        .get('/swpu_activity', {
-          params: {
-            methodname: 'publish',
-            id: row.id
-          }
+      this.$confirm('确定发布该新闻？')
+        .then(_ => {
+          axios
+            .get('/swpu_activity', {
+              params: {
+                methodname: 'publish',
+                id: row.id
+              }
+            })
+            .then(data => {
+              this.$message({
+                type: 'success',
+                message: '发布成功'
+              })
+              setTimeout(() => {
+                this.$router.go(0)
+              }, 2000)
+            })
+            .catch(err => {
+              this.$message.error(err.MSG)
+            })
         })
-        .then(data => {
-          this.$message({
-            type: 'success',
-            message: '发布成功'
-          })
-          setTimeout(() => {
-            this.$router.go(0)
-          }, 2000)
-        })
-        .catch(err => {
-          this.$message.error(err.MSG)
-        })
+        .catch(_ => {})
     },
     cancelPub (row) {
-      axios
-        .get('/swpu_activity', {
-          params: {
-            methodname: 'cancelPub',
-            id: row.id
-          }
+      this.$confirm('确定取消发布该新闻？')
+        .then(_ => {
+          axios
+            .get('/swpu_activity', {
+              params: {
+                methodname: 'cancelPub',
+                id: row.id
+              }
+            })
+            .then(data => {
+              this.$message({
+                type: 'success',
+                message: '取消发布成功'
+              })
+              setTimeout(() => {
+                this.$router.go(0)
+              }, 2000)
+            })
+            .catch(err => {
+              this.$message.error(err.MSG)
+            })
         })
-        .then(data => {
-          this.$message({
-            type: 'success',
-            message: '取消发布成功'
-          })
-          setTimeout(() => {
-            this.$router.go(0)
-          }, 2000)
-        })
-        .catch(err => {
-          this.$message.error(err.MSG)
-        })
+        .catch(_ => {})
     },
     isPublish (row) {
       return row.status === 0
+    },
+    deleteNews (row) {
+      this.$confirm('确定要删除该新闻？')
+        .then(_ => {
+          axios
+            .get('/swpu_activity', {
+              params: {
+                methodname: 'delete',
+                id: row.id
+              }
+            })
+            .then(data => {
+              this.$message({
+                type: 'success',
+                message: '删除活动成功'
+              })
+              setTimeout(() => {
+                this.$router.go(0)
+              }, 2000)
+            })
+            .catch(err => {
+              this.$message.error(err.MSG)
+            })
+        })
+        .catch(_ => {})
     }
   },
   created () {

@@ -131,6 +131,7 @@ ul {
             line-height: 50px;
             margin: 15px 0 15px 10px;
             cursor: pointer;
+            position: relative;
             i.icon-personal {
                 display: block;
                 float: left;
@@ -140,7 +141,33 @@ ul {
                 background: url('../../common/images/header-icon-personal.png') no-repeat center;
             }
             span {
-                margin-left: -30px;
+                // margin-left: -30px;
+                display: inline-block;
+                float: left;
+                margin-left: 10px;
+            }
+            &:hover .menu{
+                display: block;
+            }
+            .menu{
+                display: none;
+                height: 100px;
+                width: 90px;
+                background: #c54537;
+                position: absolute;
+                top: 50px;
+                left: 40px;
+                border-radius: 5px;
+                z-index: 1000;
+                p{
+                    line-height: 30px;
+                    font-size: 12px;
+                    color: #ffffff;
+                    &:hover{
+                        background: #ffffff;
+                        color: #c54537;
+                    }
+                }
             }
         }
     }
